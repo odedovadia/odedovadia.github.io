@@ -3,46 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Academic Blog</title>
+    <link rel="stylesheet" href="./main.css" />
+    <title>Document</title>
 </head>
 <body>
+    <div class="wrapper">
+        <div class="post">
+            <header class="post-header">
+                <h1 class="post-title">Title</h1>
+                <p class="post-meta">December 2, 2020</p>
+            </header>
+            <article class="post-content">
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae doloremque suscipit ab officia veritatis ipsum unde ea perferendis, omnis hic molestiae eaque? Assumenda et ex praesentium in consectetur sed vero.</p>
+                </blockquote>
 
-    <header>
-        <div class="container">
-            <h1>Academic Blog</h1>
+                <!-- Oded, place images inside empty divs so it does not break the layout -->
+                <div>
+                    <img src="https://picsum.photos/800/400" alt="">
+                </div>
+                <h2>Secondary title</h2>
+                <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</blockquote>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nesciunt saepe! Quod est voluptates fugit, laboriosam quisquam exercitationem inventore at, quas blanditiis quos dolor accusamus dolorem recusandae dignissimos quae laborum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nesciunt saepe! Quod est voluptates fugit, laboriosam quisquam exercitationem inventore at, quas blanditiis quos dolor accusamus dolorem recusandae dignissimos quae laborum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nesciunt saepe! Quod est voluptates fugit, laboriosam quisquam exercitationem inventore at, quas blanditiis quos dolor accusamus dolorem recusandae dignissimos quae laborum!</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Row 1</td>
+                                <td>Row 1</td>
+                            </tr>
+                            <tr>
+                                <td>Row 2</td>
+                                <td>Row 2</td>
+                            </tr>
+                            <tr>
+                                <td>Row 3</td>
+                                <td>Row 3</td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+            </article>
         </div>
-    </header>
-
-    <section class="container">
-        <article class="blog-post">
-            <h2 class="post-title">The Impact of Machine Learning on Academic Research</h2>
-            <p class="post-meta">Published on December 10, 2023 by John Doe</p>
-
-            <div class="post-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget elit vel justo
-                    ullamcorper bibendum. Vestibulum et turpis vitae quam sodales fermentum.
-                </p>
-
-                <p>
-                    Curabitur sit amet justo vel nisi volutpat convallis. Integer et condimentum elit. 
-                    Sed gravida, augue vel luctus venenatis, nisl velit cursus libero, ac consectetur arcu
-                    ligula in justo.
-                </p>
-
-                <p>
-                    ... more content ...
-                </p>
-            </div>
-        </article>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Academic Blog. All rights reserved.</p>
-        </div>
-    </footer>
-
+    </div>
 </body>
 </html>
