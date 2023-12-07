@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css" />
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+     </script>
     <title>Document</title>
 </head>
 <body>
@@ -24,53 +27,104 @@
 
                 <h2>Visualizations</h2>
                 Below are vizualizations of various time-dependent PDEs and their solution using DiTTO. For full details, please refer to the paper <a href="https://arxiv.org/abs/2307.09072">here</a>.
-                <h3>Navier-Stokes</h3>
+                <h2>Navier-Stokes</h2>
                 <div>
                     <img src="assets/gifs/navier_stokes_re20.gif" alt="">
+                    The time-dependent two-dimensional incompressible Navier-Stokes equation for a viscous, incompressible fluid in vorticity form is given by:
+                    <div id="ns"></div>
+
+                    <script type="text/javascript">
+                      // Use MathJax to render the provided LaTeX equation
+                      document.getElementById('ns').innerHTML = '\\[\\begin{equation}\\label{eq:NS_equation}' +
+                        '\\begin{cases}' +
+                        '\\partial_t \\omega(x,y,t) + u(x,y,t) \\cdot \\nabla \\omega(x,y,t) = \\nu \\Delta \\omega(x,y,t) + f(x,y), & x,y \\in (0,1)^2, t \\in (0, t_{final}] \\\\' +
+                        '\\nabla \\cdot u(x,y,t) = 0, & (x,y) \\in (0,1)^2, t \\in (0, t_{final}] \\\\' +
+                        '\\omega(x,y,0) = \\omega_0, & (x,y) \\in (0,1)^2 \\\\' +
+                        '\\end{cases}' +
+                        '\\end{equation}\\]';
+                  
+                      // This line tells MathJax to typeset the equation in the specified div
+                      MathJax.typeset(['#ns']);
+                    </script>
                 </div>
 
-                <h3>Hypersonic Flow</h3>
+
+                <h2>Hypersonic Flow</h2>
                 <div>
                     <img src="assets/gifs/hypersonic_flow.gif" alt="">
+                    For the hypersonic flow problem, we solve the Euler equations:
+                    <div id="euler1"></div>
+
+                    <script type="text/javascript">
+                      // Use MathJax to render the provided LaTeX equation
+                      document.getElementById('euler1').innerHTML = '\\[\\begin{equation}\\label{eq:vec_gov}' +
+                        '\\frac{\\partial \\mathbf{U}}{\\partial t} + \\frac{\\partial \\mathbf{F}}{\\partial x} + \\frac{\\partial \\mathbf{G}}{\\partial y} = \\mathbf{0},' +
+                        '\\end{equation}\\]';
+                  
+                      // This line tells MathJax to typeset the equation in the specified div
+                      MathJax.typeset(['#euler1']);
+                    </script>
+
+                    where:
+
+                    <div id="euler2"></div>
+
+                    <script type="text/javascript">
+                      // Use MathJax to render the provided LaTeX equation
+                      document.getElementById('euler2').innerHTML = '\\[\\begin{equation}\\label{eq:vec}' +
+                        '\\mathbf{U} = \\begin{pmatrix}\\rho\\\\ \\rho u \\\\ \\rho v\\\\ \\rho E\\end{pmatrix}, \\quad ' +
+                        '\\mathbf{F} = \\begin{pmatrix}\\rho u\\\\ \\rho u^2+p \\\\\\rho uv\\\\ u(\\rho E+p)\\end{pmatrix},\\quad ' +
+                        '\\mathbf{G} = \\begin{pmatrix}\\rho v\\\\ \\rho vu\\\\\\rho v^2+p \\\\ u(\\rho E+p)\\end{pmatrix},' +
+                        '\\end{equation}\\]';
+                  
+                      // This line tells MathJax to typeset the equation in the specified div
+                      MathJax.typeset(['#euler2']);
+                    </script>
                 </div>
 
-                <h3>Wave3d</h3>
-                <div>
-                    <img src="assets/gifs/wave3d.gif" alt="">
-                </div>
-
-                <h3>Wave2d</h3>
-                <div>
-                    <img src="assets/gifs/wave2d.gif" alt="">
-                </div>
+                <h2>Wave3d</h2>
+                    <div>
+                        <img src="assets/gifs/animation_wave3d.gif" alt="">
+                    </div>
+                    <p>Here is the equation for the 2D/3D wave problem:</p>
+                    <div id="wave_eq"></div>
+                    <script type="text/javascript">
+                    // Use MathJax to render the provided LaTeX equation
+                    document.getElementById('wave_eq').innerHTML = '\\[\\begin{equation}\\label{eq:gen_wave_eq}' +
+                        '\\begin{cases}' +
+                        'u_{tt}(\\textbf{x}, t)=c^2(\\textbf{x}) \\Delta u(\\textbf{x}, t) & \\textbf{x} \\in \\Omega, 0\\leq t \\leq 2, \\\\' +
+                        'u(\\textbf{x}, 0)=u_0(\\textbf{x}) & \\textbf{x} \\in \\Omega, \\\\' +
+                        'u_t(\\textbf{x}, 0)=0 & \\textbf{x} \\in \\Omega,' +
+                        '\\end{cases}' +
+                        '\\end{equation}\\]';
                 
-                <h3>Burgers' Equation</h3>
-                <div>
-                    <img src="assets/gifs/burgers.gif" alt="">
-                </div>
+                    // This line tells MathJax to typeset the equation in the specified div
+                    MathJax.typeset(['#wave_eq']);
+                    </script>
 
-                <!-- <table>
-                    <thead>
-                        <tr>
-                            <th>Column 1</th>
-                            <th>Column 2</th>
-                        </tr>
-                        <tbody>
-                            <tr>
-                                <td>Row 1</td>
-                                <td>Row 1</td>
-                            </tr>
-                            <tr>
-                                <td>Row 2</td>
-                                <td>Row 2</td>
-                            </tr>
-                            <tr>
-                                <td>Row 3</td>
-                                <td>Row 3</td>
-                            </tr>
-                        </tbody>
-                    </thead>
-                </table> -->
+                    <h2>Wave2d</h2>
+                    <div>
+                        <img src="assets/gifs/wave_2d.gif" alt="">
+                    </div>
+                
+                <h2>Burgers' Equation</h2>
+                <div>
+                    <img src="assets/gifs/animation_burgers_slow.gif" alt="">
+                    <div id="burgers"></div>
+                    The one-dimensional time-dependent Burgers' equation for a viscous fluid is given by:
+                    <script type="text/javascript">
+                      // Use MathJax to render the provided LaTeX equation
+                      document.getElementById('burgers').innerHTML = '\\[\\begin{equation}\\label{burgers_equation}' +
+                        '\\begin{cases}' +
+                        '\\partial_t u(x,t) + \\partial_x \\left(\\frac{u^2(x,t)}{2}\\right) = \\nu \\partial_{xx} u(x,t), & x \\in (0,1), t \\in (0, t_{final}] \\\\' +
+                        'u(x,0) = u_0, & x \\in (0,1) \\\\' +
+                        '\\end{cases}' +
+                        '\\end{equation}\\]';
+                  
+                      // This line tells MathJax to typeset the equation in the specified div
+                      MathJax.typeset(['#burgers']);
+                    </script>
+                </div>
             </article>
         </div>
     </div>
